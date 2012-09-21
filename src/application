@@ -1,0 +1,16 @@
+#!/usr/bin/env php
+<?php
+
+require 'vendor/autoload.php';
+require 'src/Command/CheckCommand.php';
+require 'src/Exception/IdStatusException.php';
+
+use Symfony\Component\Console\Application;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Output\OutputInterface;
+
+$application = new Application();
+$application->add(new \Command\CheckCommand());
+$application->run();
